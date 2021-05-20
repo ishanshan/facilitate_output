@@ -1,6 +1,6 @@
 
 
-- [闪闪个人博客](https://ishanshan.im/)
+
 
 - 输出实验室 <span class="arrow">&#x25BE;</span>
   - [介绍](/)
@@ -14,8 +14,8 @@
   - [产品开发]()
   - [面容调整]()    
 
-
 - 关于我 <span class="arrow">&#x25BE;</span>
   - [个人简介]()
+  - [个人博客](https://ishanshan.im/)
   - [理想的生活]()
   - [养娃清单]()
