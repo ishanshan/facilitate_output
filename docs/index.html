@@ -11,7 +11,7 @@
   <link rel="stylesheet"
         href="//cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/style.css" />
   <!--  <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">-->
-
+i
   <meta http-equiv="X-UA-Compatible"
         content="IE=edge,chrome=1" />
   <meta name="google-site-verification"
@@ -41,34 +41,38 @@
   type="text/css"
 /> -->
 
-  <style>
-    nav.app-nav li ul {
-      min-width: 100px;
-    }
+<style>
+  nav.app-nav li ul {
+    min-width: 100px;
+  }
 
-    .page_toc .lv3 span {
-      text-indent: 0 !important;
-      padding-left: 20px !important;
-      white-space: initial !important;
-    }
+  .page_toc .lv2 span {
+    text-indent: 0 !important;
+    padding-left: 5px !important;
+    white-space: initial !important;
+  }
 
-    .page_toc .lv4 span {
-      text-indent: 0 !important;
-      padding-left: 30px !important;
-      white-space: initial !important;
-    }
+  .page_toc .lv3 span {
+    text-indent: 0 !important;
+    padding-left: 20px !important;
+    white-space: initial !important;
+  }
 
-    .page_toc .lv5 span {
-      text-indent: 0 !important;
-      padding-left: 40px !important;
-      white-space: initial !important;
-    }
+  .page_toc .lv4 span {
+    text-indent: 0 !important;
+    padding-left: 30px !important;
+    white-space: initial !important;
+  }
 
-    .page_toc .lv6 span {
-      text-indent: 0 !important;
-      padding-left: 50px !important;
-      white-space: initial !important;
-    }
+  .page_toc .lv5 span {
+    text-indent: 0 !important;
+    padding-left: 40px !important;
+    white-space: initial !important;
+  }
+
+
+
+
 
 
     #TOPBANNER {
@@ -79,10 +83,10 @@
 
     .markdown-section {
       padding-right: 60px;
-      font-size: 16px;
+      font-size: 17px;
     }
 
-    .markdown-section h4 {
+    .markdown-section h4{
       font-size: 18px;
     }
   </style>
@@ -175,23 +179,24 @@
 </aside>
 <div id="gitalk-container"></div>
 <a class="to-top"
-   style="cursor: pointer; position: fixed; right: 15px; bottom: 30px; display: inline;"> ↑ </a >
+   style="cursor: pointer; position: fixed; right: 15px; bottom: 30px; display: inline;">↑</a >
 
 
 
 <script>
   window.$docsify = {
+    count: {
+      margin: "50px",
+      language:'chinese',
+    },
     search: 'auto', // default
-    repo: 'https://github.com/ishanshan/facilitate_output',
-    repo: '', // set the docsify show the corner
+    repo: '',
+    // repo: '', // set the docsify show the corner
     corner: {
       // the icon link url to another site
       url: "https://gitlab.com/gitlab-org/gitlab-svgs",
       // the default preset icon in docsify-corner
       icon: "gitlab",
-    },
-    count: {
-        margin: "100px",
     },
     plugins: [
       EditOnGithubPlugin.create(
@@ -199,7 +204,7 @@
               null,
               function(file) {
                 if (file.indexOf('en') === -1) {
-                  return '编辑本页'
+                  return '[编辑本页]'
                 } else {
                   return 'edit on git'
                 }
@@ -256,17 +261,17 @@
         '/': '搜索'
       }
     },
-    formatUpdated: '{MM}/{DD}',
+    // formatUpdated: '{MM}/{DD}',
 
     // formatUpdated: function(time) {
       // ...
 
-      // return time;
+    //  return time;
     // },
   }
 </script>
 
-<!--  <script src="https://cdn.jsdelivr.net/npm/docsify-top-banner-plugin@latest/dist/index.js"></script> -->
+
 
 
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
