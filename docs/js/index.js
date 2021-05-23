@@ -1,5 +1,5 @@
 const plugin = (hook, vm) => {
-  
+
   var defaultConfig = {
     siteFont : "PT Sans",
     defaultTheme : 'dark',
@@ -61,7 +61,7 @@ const plugin = (hook, vm) => {
 
     if(vm.config.darklightTheme.hasOwnProperty("light")) {
       for (var [key, value] of Object.entries(vm.config.darklightTheme.light))
-      themeConfig.light[key] = value 
+      themeConfig.light[key] = value
     }
 
   } else {
@@ -95,13 +95,13 @@ const plugin = (hook, vm) => {
     document.documentElement.style.setProperty('color-scheme', theme)
 
   }
-  
+
   hook.afterEach(function(html, next) {
     var darkEl = `<div id="docsify-darklight-theme"><p>.</p></div>`
     html = `${darkEl}${html}`
     next(html)
   })
-  
+
   hook.doneEach(function() {
     let savedTheme = localStorage.getItem('DARK_LIGHT_THEME')
     if ( savedTheme == "light" || savedTheme == "dark") {
@@ -128,5 +128,7 @@ const plugin = (hook, vm) => {
 
   })
 }
-  
-window.$docsify.plugins = [].concat(plugin, window.$docsify.plugins)
+
+if (window.$docsify) {
+  window.$docsify.plugins = [].concat(plugin, window.$docsify.plugins)
+}
