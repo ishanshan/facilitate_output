@@ -209,17 +209,27 @@ i
                 }
               }
       ),
+
+
       function(hook) {
         var footer = [
           '<footer style="text-align: center;margin-top: 50px;">',
-          '<span> &copy;  2015-2021 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 24" fill="gray" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>  <a href=" " target="_blank"> 闪闪 | ishanshan</a >  </span>',
+          '<footer>',
+          '<span>Copyright &copy;2015-2021 by <a href="https://github.com/ishanshan"><strong> 闪闪 | ishanshan</strong></a>. </span>',
+          '<span>Published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.<br></span>',
+          'This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC-SA 4.0</a>.<br>',
+          '转载请保留链接并申明来源',
+/*                    '<span id="busuanzi_container_site_pv" style=\'display:none\'>\n' +
+                '    本站总访问量<span id="busuanzi_value_site_pv"></span>次|\n' +
+                '    👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次<br>\n' +
+                '</span>',*/
           '</footer>'
         ].join('');
 
         hook.afterEach(function(html) {
           return html + footer;
         });
-      },
+      }
     ],
     auto2top: true,
     mergeNavbar: false,
@@ -286,6 +296,8 @@ i
     distractionFreeMode: false
   })
 </script>
+
+
 
 
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
