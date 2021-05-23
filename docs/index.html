@@ -79,6 +79,10 @@
 
     .markdown-section {
       padding-right: 60px;
+      font-size: 16px;
+    }
+
+    .markdown-section h4 {
       font-size: 18px;
     }
   </style>
@@ -186,6 +190,9 @@
       // the default preset icon in docsify-corner
       icon: "gitlab",
     },
+    count: {
+        margin: "100px",
+    },
     plugins: [
       EditOnGithubPlugin.create(
               'https://github.com/ishanshan/facilitate_output/tree/main/docs/',
@@ -218,7 +225,6 @@
     maxLevel: 1,
     subMaxLevel: 2,
     sidebarDisplayLevel: 1,
-    topMargin: 280,
     name: 'ishanshan\'s blog',
     nameLink: 'https://ishanshan.im/',
     topBanner: {
