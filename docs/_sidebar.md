@@ -1,7 +1,7 @@
-<center> 输出实验室 </center> 
+<center> 输出实验室 </center>
 
 
-- [实验室介绍](/)
+- [实验室介绍](README.md)
 - [报名入口](signup.md)
 - 参与指南
     - [参与锦囊](tips.md)

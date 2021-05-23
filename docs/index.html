@@ -189,6 +189,22 @@ i
       language:'chinese',
     },
     search: 'auto', // default
+    alias: {
+      '.*?/awesome':
+        'https://raw.githubusercontent.com/docsifyjs/awesome-docsify/master/README.md',
+      '.*?/family/(.*)':
+        'https://raw.githubusercontent.com/ishanshan/ForFamily/master/docs/$1',
+      '.*?/about/(.*)':
+        'https://raw.githubusercontent.com/ishanshan/collaborate_ishanshan/master/$1',
+      '.*?/devpro/(.*)':
+        'https://raw.githubusercontent.com/ishanshan/Road2StrategyPM/master/$1',
+      '/de-de/(.*)':
+        'https://raw.githubusercontent.com/docsifyjs/docs-de/master/$1',
+      '/ru-ru/(.*)':
+        'https://raw.githubusercontent.com/docsifyjs/docs-ru/master/$1',
+      '/zh-cn/(.*)':
+        'https://cdn.jsdelivr.net/gh/docsifyjs/docs-zh@master/$1',
+    },
     repo: '',
     // repo: '', // set the docsify show the corner
     corner: {
@@ -265,6 +281,7 @@ i
       noData: {
         '/': '暂无相关内容，换个关键词试试？'
       },
+      maxAge: 10, // Expiration time, the default one day
       paths: 'auto',
       placeholder: {
         '/': '搜索'
