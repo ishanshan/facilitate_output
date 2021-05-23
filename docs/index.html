@@ -270,7 +270,22 @@ i
   }
 </script>
 
+</script>
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>  <!--rel src这几个记得要写在body内，并且要放在该<script>以上 否则会出现gitalk no defined的报错-->
+<script>
+  const gitalk = new Gitalk({
+    clientID: '136fac9b4edc60a1bce',
+    clientSecret: 'ada3cd4991135a91a738883304997c70c5f4458e',
+    repo: 'facilitate_output',
+    owner: 'ishanshan',
+    admin: ['ishanshan'],
+    // facebook-like distraction free mode
+    distractionFreeMode: false
+  })
+</script>
 
 
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
