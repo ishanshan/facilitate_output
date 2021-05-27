@@ -1,29 +1,40 @@
 
----
-
-<center><strong>[ 输出实验室 ]</strong></center>
 
 
----
+<center>记录分享<br> 令人「健康蓬勃 温暖从容」<br> 的工具方法</center>
 
-- [实验室介绍](README.md)
-- [报名入口](signup.md)
+<br>
+
+<center><strong> - - - [ 主页 ] - - - </strong></center>
+
+- [本博客导览](home.md)
+- [内容更新列表](index_upd.md)
+
+<br>
+
+<center><strong> - - - [ 输出实验室 ] - - - </strong></center>
+
+
+
+- [输出实验室 玩法介绍](README.md)
+- [报名入口 <sup style="color:red;">5.30 早10点截止</sup>](signup.md)
 - 参与指南
-    - [参与锦囊](tips.md)
     - [常见疑问解答/FAQ](faq.md)
     - [如何用好这里的资源？/各角色进阶标准](https://docs.qq.com/sheet/DVVd5eXNrVUlaTmh3?tab=8bdky8)
     - [个人目标&规划参考](https://docs.qq.com/doc/DVUptSWJ2d2pKUGti)
     - [主持人训练规划](https://docs.qq.com/doc/DVWZER1lLa1V0c0dh)
     - [主持人指南](https://docs.qq.com/doc/DVXFFdEpRdVZJaG1T)
-- 发展记录/用户反馈
-- 每期复盘
+- 发展记录
+    - 用户反馈
+    - 往期复盘
+    - 迭代记录
 
----
+<br>
 
-<center><strong>[ 主题实践手记 ]</strong></center>
+<center><strong> - - - [ 主题实践手记 ] - - - </strong></center>
 
 
----
+
 
 <center><strong>产品策划开发</strong></center>
 
@@ -66,13 +77,27 @@
         - [Task:分析两个功能中的策略四要素](devpro/Course3jkSPM/Chap1Task.md)
         - [学习过程复盘](devpro/Course3jkSPM/Chap1Review.md)
 
----
-
-<center><strong>[ 关于我 ]</strong></center>
 
 
----
+<br>
+
+<center><strong>摇摆舞</strong></center>
+
+- [摇摆舞（Swing）手记导览](swing/)   
+- [Swing 新人指南](swing/HbSwingBeginner.md)  
+- [Swing 舞会指南](swing/HbParty.md)  
+- [Swing 动作心得](swing/HbTechniquesAndSteps.md)  
+- [Swing 星标资源](swing/IdxHighLightResources.md)  
 
 
+<br>
+
+<center><strong> - - - [ 关于我 ] - - - </strong></center>
+
+
+
+
+- [简介](https://ishanshan.im/about/)
 - [理想生活](about/ideallife_ishanshan)
+- [近期规划](https://docs.qq.com/doc/DVWlSYW53c1dtanB4)
 - [养娃清单](family/hb_parenting.md)
