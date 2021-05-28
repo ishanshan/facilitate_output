@@ -2,7 +2,7 @@
 
 
 - [主页](home.md)
-- 输出实验室<sup style="color:red;">报名中</sup>
+- 输出实验室<sup style="color:orange;">报名中</sup>
   - [介绍](README.md)
   - [报名入口](signup.md)
   - [常见疑问解答/FAQ](faq.md)
