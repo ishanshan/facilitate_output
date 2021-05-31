@@ -17,7 +17,7 @@
 
 
 - [输出实验室 玩法介绍](README.md)
-- [报名入口 <sup style="color:orange;">5.30 早10点截止</sup>](signup.md)
+- [报名入口](signup.md)
 - 参与指南
     - [常见疑问解答/FAQ](faq.md)
     - [如何用好这里的资源？/各角色进阶标准](https://docs.qq.com/sheet/DVVd5eXNrVUlaTmh3?tab=8bdky8)
