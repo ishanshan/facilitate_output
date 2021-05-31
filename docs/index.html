@@ -219,24 +219,35 @@
 
 
       function(hook) {
-        var footer = [
-          '<footer style="text-align: center;margin-top: 50px;color: gray;">',
-          '<footer>',
-          '<span>&copy;2015-2021 ♥ <a href="https://github.com/ishanshan"> 闪闪 | ishanshan</strong></a>. </span>',
-          '<span>Published with <a href="https://docsify.js.org/#/" target="_blank">docsify</a>.<br></span>',
-          'This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC-SA 4.0</a>.<br>',
-          '转载请保留链接并申明来源',
-/*                    '<span id="busuanzi_container_site_pv" style=\'display:none\'>\n' +
-                '    本站总访问量<span id="busuanzi_value_site_pv"></span>次|\n' +
-                '    👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次<br>\n' +
-                '</span>',*/
-          '</footer>'
-        ].join('');
+          const footnote_elements = new Set();
+          var footer = [
+            '<footer style="text-align: center;margin-top: 50px;color: gray;">',
+            '<footer>',
+            '<span>&copy;2015-2021 ♥ <a href=" "> 闪闪 | ishanshan</strong></a >. </span>',
+            '<span>Published with <a href="https://docsify.js.org/#/" target="_blank">docsify</a >.<br></span>',
+            'This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC-SA 4.0</a >.<br>',
+            '转载请保留链接并申明来源',
+  /*                    '<span id="busuanzi_container_site_pv" style=\'display:none\'>\n' +
+                  '    本站总访问量<span id="busuanzi_value_site_pv"></span>次|\n' +
+                  '    👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次<br>\n' +
+                  '</span>',*/
+            '</footer>'
+          ].join('');
 
-        hook.afterEach(function(html) {
-          return html + footer;
-        });
-      }
+          hook.afterEach(function(html) {
+            return html.replaceAll(
+                    /\[\^([^]]*)\]/g,
+                    function(match,footnoteId){
+                      if (!footnote_elements.has(footnoteId)) {
+                        footnote_elements.add(footnoteId);
+                        return `<a id="footnote_ref_${footnoteId}" href="#/?id=footnote_${footnoteId}"><sup>${footnoteId}</sup></a >`
+                      } else {
+                        return `<a id="footnote_${footnoteId}" href="#/?id=footnote_ref_${footnoteId}"><span>[${footnoteId}]</span></a >`
+                      }
+                    }
+            ) + footer;
+          });
+        }
     ],
     auto2top: true,
     // themeColor: '#3F51B7',
