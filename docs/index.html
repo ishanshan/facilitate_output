@@ -180,9 +180,12 @@
       language:'chinese',
     },
     // search: 'auto', // default
+
     alias: {
-      '.*?/awesome':
-        'https://raw.githubusercontent.com/docsifyjs/awesome-docsify/master/README.md',
+      '.*?/card':
+        'https://gitlab.com/ishanshan/writing_hub/-/raw/master/content/HbOutputbyCards.md',
+      '.*?/index_update':
+        'https://raw.githubusercontent.com/ishanshan/blog_upd/master/index_upd.md',
       '.*?/family/(.*)':
         'https://raw.githubusercontent.com/ishanshan/ForFamily/master/docs/$1',
       '.*?/about/(.*)':
@@ -191,11 +194,17 @@
         'https://raw.githubusercontent.com/ishanshan/Road2StrategyPM/master/$1',
       '.*?/swing/(.*)':
         'https://raw.githubusercontent.com/ishanshan/EnjoySwingDancing/master/$1',
-      '/ru-ru/(.*)':
-        'https://raw.githubusercontent.com/docsifyjs/docs-ru/master/$1',
-      '/zh-cn/(.*)':
-        'https://cdn.jsdelivr.net/gh/docsifyjs/docs-zh@master/$1',
+      '.*?/wr/(.*)':
+        'https://gitlab.com/ishanshan/writing_hub/-/raw/master/content/$1',
+      '.*?/cmty/(.*)':
+        'https://raw.githubusercontent.com/ishanshan/CollaborationGuide4Shaper/v2/CONTENT/$1',
+      '.*?/f_output/(.*)':
+        'https://raw.githubusercontent.com/facilitate-output/blog/main/content/$1',
+
+
     },
+    notFoundPage: true,
+
     repo: '',
     // repo: '', // set the docsify show the corner
     corner: {
@@ -223,32 +232,47 @@
         var footer = [
           '<footer style="text-align: center;margin-top: 20px;color: gray;">',
           '<footer>',
-          '<span>&copy;2015-2021 ♥ <a href="https://github.com/ishanshan"> 闪闪 | ishanshan</strong></a>. </span>',
-          '<span>Published with <a href="https://docsify.js.org/#/" target="_blank">docsify</a>.<br></span>',
-          'This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC-SA 4.0</a>.<br>',
+          '<span>如果内容对你有帮助，那就来杯酸奶助我继续分享吧 (＾－＾)V <a href="http://ishanshan.zoomquiet.top/share/rewardblogwechatpay-3.jpeg?imageView2/2/w/280"> 赠酸奶 </strong></a> </span><br>',
+          '<span>&copy;2015-2021 ♥ <a href="https://github.com/ishanshan"> 闪闪 | ishanshan</a>, </span>',
+          'under <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC-SA 4.0</a>.<br>',
           '转载或引用，请保留链接并申明来源',
-
+/*                    '<span id="busuanzi_container_site_pv" style=\'display:none\'>\n' +
+                '    本站总访问量<span id="busuanzi_value_site_pv"></span>次|\n' +
+                '    👀本站访客数：<span id="busuanzi_value_site_uv"></span>人次<br>\n' +
+                '</span>',*/
           '</footer>'
         ].join('');
 
         hook.afterEach(function(html) {
+          const urlPrefix = window.location.href.substring(0, window.location.href.indexOf('?') > 0 ? window.location.href.indexOf('?') : undefined);
+          if (urlPrefix.endsWith('/#/')) {
+            window.location.href += 'README';
+            window.location.reload();
+          }
           const beforeFooter = html.replaceAll(
                   /\[\^([^\]]*)\]/g,
                   function(match,footnoteId){
                     // if(true) return match;
                     if (!footnote_elements.has(footnoteId)) {
                       footnote_elements.set(footnoteId, footnote_elements.size + 1);
-                      return `<a id="footnote_ref_${footnote_elements.size}" href="#/?id=footnote_${footnote_elements.size}"><sup>${footnote_elements.size}</sup></a>`
+                      return `<a id="footnote_ref_${footnote_elements.size}" href="${urlPrefix}?id=footnote_${footnote_elements.size}"><sup>${footnote_elements.size}</sup></a>`
                     } else {
-                      return `<br class="footnote_splitter"/><a id="footnote_${footnote_elements.get(footnoteId)}" href="#/?id=footnote_ref_${footnote_elements.get(footnoteId)}"><span>[${footnote_elements.get(footnoteId)}]</span></a>`
+                      return `<br class="footnote_splitter"/><a id="footnote_${footnote_elements.get(footnoteId)}" href="${urlPrefix}?id=footnote_ref_${footnote_elements.get(footnoteId)}"><span>[${footnote_elements.get(footnoteId)}]</span></a>`
                     }
                   }
           );
           const reference_h2_index = beforeFooter.indexOf('h2 id="reference"');
+          if (reference_h2_index === -1) {
+            return beforeFooter + footer;
+          }
           const footnote_start_index = beforeFooter.indexOf('<p>', reference_h2_index) + 3;
           const footnote_end_index = beforeFooter.indexOf('</p>', reference_h2_index);
+          if (footnote_start_index === -1 || footnote_end_index === -1) {
+            return beforeFooter + footer;
+          }
           const footnote =  beforeFooter.substring(footnote_start_index, footnote_end_index);
           const sorted_footnote = footnote.split('<br class=\"footnote_splitter\"/>').slice(1).sort((item1, item2) => item1.substring(16,item1.indexOf("\" ")) - item2.substring(16,item2.indexOf("\" "))).join('<br/>')
+          // return beforeFooter + footer;
           return beforeFooter.substring(0, footnote_start_index) + sorted_footnote + beforeFooter.substring(footnote_end_index) + footer;
         });
       }
@@ -310,7 +334,7 @@
   const gitalk = new Gitalk({
     clientID: 'c136fac9b4edc60a1bce',
     clientSecret: '3167d7c32bbd36cf020486a54f08254f44f72ae9',
-    repo: 'ishanshan.github.io',
+    repo: 'blog_comment',
     owner: 'ishanshan',
     admin: ['ishanshan'],
     // language: 'zh-CN',
